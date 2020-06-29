@@ -1,6 +1,6 @@
 {
   "name": "oneof-loader",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Oneof loader for webpack",
   "main": "lib/index.js",
   "repository": "allex/oneof-loader",
