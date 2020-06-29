@@ -20,7 +20,7 @@ const evalCondition = (condition: ConditionType | ConditionType[], path: string)
   } if (isFunc(c)) {
     return c(path) === true
   } if (Array.isArray(c)) {
-    return !c.some(t => !evalCondition(t, path))
+    return c.some(t => evalCondition(t, path))
   }
   return false
 }
