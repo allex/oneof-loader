@@ -31,7 +31,14 @@ module: {
             },
             {
               test: /\/src\//,
-              loader: 'vue-svg-loader'
+              exclude: [
+                /iconfont\//,
+                resolve('src/assets/img')
+              ],
+              use: [
+                { loader: 'babel-loader' },
+                { loader: 'vue-svg-loader' }
+              ]
             },
             {
               loader: 'svg-url-loader',
