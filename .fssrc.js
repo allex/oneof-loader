@@ -34,11 +34,6 @@ const plugins = [
 export default {
   destDir: resolve('lib'),
   dependencies: { events: true, ...dependencies },
-  plugins: {
-    typescript: {
-      typescript: require('typescript')
-    }
-  },
   entry: [
     {
       input: resolve('src/index.ts'),

@@ -27,13 +27,15 @@
     "@types/node": "^13.1.8",
     "babel-core": "bridge",
     "babel-jest": "^23.6.0",
-    "eslint": "^5.15.3",
+    "eslint": "^6",
     "eslint-config-airbnb-base": "~14.0.0",
-    "eslint-config-fdio": "next",
+    "eslint-config-fdio": "insiders",
     "eslint-import-resolver-typescript": "^2.0.0",
-    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-import": "^2.23.0",
     "husky": "^1.1.2",
-    "jest": "^23.6.0"
+    "jest": "^23.6.0",
+    "tslib": "^2.3.1",
+    "webpack": "^5.52.1"
   },
   "peerDependencies": {
     "webpack": "^4 || ^5"

@@ -11,12 +11,13 @@
   "settings": {
     "import/resolver": {
       "typescript": {
-        "directory": "./tsconfig.json"
+        "project": "./tsconfig.json"
       }
     }
   },
   "rules": {
     "no-unused-expressions": 0,
+    "consistent-return": 0,
     "import/no-dynamic-require": 0,
     "@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-var-requires": 0,

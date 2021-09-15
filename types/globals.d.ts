@@ -7,12 +7,12 @@ declare global {
   type Newable<T> = new (...args: any[]) => T
 
   interface Kv<T = any> {
-    [index: string]: T
+    [index: string]: T;
   }
   interface Error {
-    [key: string]: any
+    [key: string]: any;
   }
   interface Promise<T> {
-    [key: string]: any
+    [key: string]: T;
   }
 }
