@@ -14,6 +14,7 @@
     "listFiles": true,
     "pretty": true,
     "noEmitOnError": false,
+    "skipLibCheck": true,
     "strictNullChecks": true,
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": true,
