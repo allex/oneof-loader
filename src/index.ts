@@ -2,10 +2,15 @@
 /* eslint-disable @typescript-eslint/no-unsafe-member-access */
 /* eslint-disable @typescript-eslint/no-unsafe-assignment */
 
+import path from 'path'
+
 import type * as webpack from 'webpack'
 import { getOptions } from 'loader-utils'
 
 const isFunc = (o: any) => typeof o === 'function'
+
+// normalize based on the OS, unify path to forward slash (/)
+const normalizePath = (value: string): string => (path.sep === '\\' ? value.replace(/\\/g, '/') : value)
 
 type RegExpLike = RegExp | { test (o: string): boolean; }
 type Func<T> = (...args: any[]) => T;
@@ -69,7 +74,7 @@ const loader: LoaderDefinitionFunction = function (contents, map, meta): string 
   // Loader Options
   const options: LoaderOptions = getOptions(this) || {}
 
-  const resourcePath = this.resourcePath
+  const resourcePath = normalizePath(this.resourcePath)
   const oneOf = options.oneOf
 
   if (!oneOf || !oneOf.length) {
@@ -106,6 +111,8 @@ const loader: LoaderDefinitionFunction = function (contents, map, meta): string 
         return internalCb(null, content, map, meta)
       }
 
+      // When multiple loaders are chained, it is important to remember that they are executed in reverse order – either right to left or bottom to
+      // top depending on array format. see <https://webpack.js.org/contribute/writing-a-loader/#complex-usage>
       const conf = list.pop()
       const { loader, options } = conf!
 
